@@ -1,7 +1,7 @@
 module.exports = function sortCategoriesForInsert(inputJson) {
     let properJsonOutput = []; let nullObj;
     let nullObjs = inputJson.filter(function (inputVal, index) {
-        if (inputVal.parent_id == null && Number.isNaN(parseInt(inputVal.parent_id))) {
+        if (inputVal.parent_id == null || Number.isNaN(parseInt(inputVal.parent_id))) {
             inputJson.splice(index, 1);
 
             return true;
